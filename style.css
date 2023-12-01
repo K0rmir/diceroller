@@ -1,0 +1,22 @@
+body {
+    max-width: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+.resultbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    border: 3px solid black;
+    width: 7rem;
+    padding: .25rem;
+
+}
+
+#result {
+    padding-left: 10px;
+}
