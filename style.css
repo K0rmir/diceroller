@@ -1,5 +1,9 @@
 body {
     max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: bisque;
 }
 
 button {
@@ -12,11 +16,86 @@ button {
     justify-content: center;
     margin-top: 20px;
     border: 3px solid black;
-    width: 7rem;
+    width: 15rem;
     padding: .25rem;
 
 }
 
 #result {
     padding-left: 10px;
+}
+
+.modifier {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.modifier button {
+    height: 25px;
+}
+
+
+/* Mobile Styles */
+
+@media (max-width: 425px) {
+    #dice {
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: repeat(2, 0.5fr);
+        grid-template-rows: repeat(3, 0.5fr);
+        gap: 10px;
+        height: 50px;
+        width: 175px;
+        margin: 0;
+        position: fixed;
+        bottom: 10%;
+        left: 30%;   
+    }
+
+    .modifier {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        bottom: 17%;
+        width: 100%;
+    }
+
+    .modifierControl {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .modifier button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: darkseagreen;
+        border: 2px solid black;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 1.25rem;
+    }
+
+    .diceQuantity {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .resultbox {
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 25%;
+        left: 20%;
+        background-color: darkcyan;
+
+    }
+
+
 }

@@ -8,16 +8,36 @@
     <title>Document</title>
   </head>
   <body>
-    <button id="rolld4btn">Roll a D4!</button>
-    <button id="rolld6btn">Roll a D6!</button>
-    <button id="rolld8btn">Roll a D8!</button>
-    <button id="rolld10btn">Roll a D10!</button>
-    <button id="rolld12btn">Roll a D12!</button>
-    <button id="rolld20btn">Roll a D20!</button>
+    <div id="dice">
+      <button id="rolld4btn">Roll a D4!</button>
+      <button id="rolld6btn">Roll a D6!</button>
+      <button id="rolld8btn">Roll a D8!</button>
+      <button id="rolld10btn">Roll a D10!</button>
+      <button id="rolld12btn">Roll a D12!</button>
+      <button id="rolld20btn">Roll a D20!</button>
+    </div>
 
-    <span class="resultbox">
-      Result:
-      <p id="result"></p>
-    </span>
+    <div class="resultbox">
+      <div>
+        <p id="result">0</p>
+      </div>
+      <br />
+      <p id="rollBreakdown"></p>
+    </div>
+
+    <div class="modifier">
+      <p>Modifier</p>
+      <div class="modifierControl">
+        <button id="modifierMinus">-</button>
+        <p id="modifierNum">0</p>
+        <button id="modifierPlus">+</button>
+      </div>
+      <div class="diceQuantity">
+        <p>Quantity</p>
+        <button id="quantityMinus">-</button>
+        <p id="quantityNum">1</p>
+        <button id="quantityPlus">+</button>
+      </div>
+    </div>
   </body>
 </html>
