@@ -14,15 +14,16 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     margin-top: 20px;
     border: 3px solid black;
     width: 15rem;
     padding: .25rem;
-
 }
 
 #result {
-    padding-left: 10px;
+    margin: 0;
+    font-size: 3rem;
 }
 
 .modifier {
@@ -94,7 +95,12 @@ button {
         top: 25%;
         left: 20%;
         background-color: darkcyan;
+    }
 
+    #rollBreakdown {
+        margin: 0;
+        padding-bottom: 1rem;
+        
     }
 
 
