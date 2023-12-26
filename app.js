@@ -2,22 +2,26 @@ const result = document.getElementById("result");
 const modifierMinus = document.getElementById("modifierMinus");
 const modifierPlus = document.getElementById("modifierPlus");
 const modifierNum = document.getElementById("modifierNum");
+const quantityMinus = document.getElementById("quantityMinus");
+const quantityPlus = document.getElementById("quantityPlus");
+const quantityNum = document.getElementById("quantityNum");
 const rollBreakdown = document.getElementById("rollBreakdown");
 let modifier = 0;
+let quantity = 0;
 
 // Event Listeners for modifiers //
 
-// Plus //
+// Modifer Minus //
 modifierMinus.addEventListener("click", function() {
     if (modifier <= 0) {
         modifier--;
         modifierNum.textContent = modifier;
     } else if (modifier > 0) {
         modifier--;
-        modifierNum.textContent = "+" + modifier;
+        modifierNum.textContent = `+ ${modifier}`;
     }
 });
-// Minus //
+// Modifier Plus //
 modifierPlus.addEventListener("click", function() {
     if (modifier >= 0) {
         modifier++;
@@ -27,6 +31,28 @@ modifierPlus.addEventListener("click", function() {
         modifierNum.textContent = modifier;
     }
 });
+
+// Quantity Minus //
+
+quantityMinus.addEventListener("click", function() {
+    if (quantity === 0) {
+        quantityNum.textContent = quantity;
+    } else if (quantity > 0){
+        quantity--;
+        quantityNum.textContent = `+ ${quantity}`
+    }
+});
+
+// Quantity Plus //
+
+quantityPlus.addEventListener("click", function() {
+    if (quantity >= 0) {
+        quantity++;
+        quantityNum.textContent = `+ ${quantity}`
+    }
+});
+
+
 
 // Functions for rolling each dice.  //
 
