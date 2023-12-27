@@ -6,8 +6,10 @@ const quantityMinus = document.getElementById("quantityMinus");
 const quantityPlus = document.getElementById("quantityPlus");
 const quantityNum = document.getElementById("quantityNum");
 const rollBreakdown = document.getElementById("rollBreakdown");
+const rolls = document.getElementById("rolls");
 let modifier = 0;
-let quantity = 0;
+let quantity = 1;
+let diceRolls = [];
 
 // Event Listeners for modifiers //
 
@@ -25,7 +27,7 @@ modifierMinus.addEventListener("click", function() {
 modifierPlus.addEventListener("click", function() {
     if (modifier >= 0) {
         modifier++;
-        modifierNum.textContent = "+" + modifier;
+        modifierNum.textContent = `+  ${modifier}`
     } else if (modifier < 0){
         modifier++;
         modifierNum.textContent = modifier;
@@ -33,34 +35,27 @@ modifierPlus.addEventListener("click", function() {
 });
 
 // Quantity Minus //
-
 quantityMinus.addEventListener("click", function() {
-    if (quantity === 0) {
+    if (quantity === 1) {
         quantityNum.textContent = quantity;
-    } else if (quantity > 0){
+    } else if (quantity > 1){
         quantity--;
         quantityNum.textContent = `+ ${quantity}`
     }
 });
-
 // Quantity Plus //
-
 quantityPlus.addEventListener("click", function() {
-    if (quantity >= 0) {
+    if (quantity >= 1) {
         quantity++;
         quantityNum.textContent = `+ ${quantity}`
     }
 });
 
-
-
-// Functions for rolling each dice.  //
+// Functions for rolling each dice and returning a number.  //
 
 const rollD4 = () => {
     const rolld4btn = document.getElementById("rolld4btn");
-    let d4 = Math.ceil(Math.random() * 4);
-    result.textContent = d4 + modifier;
-    rollBreakdown.textContent = `You rolled: ${d4} + ${modifier}`;
+    return Math.ceil(Math.random() * 4); 
 };
 
 const rollD6 = () => {
@@ -98,7 +93,28 @@ const rollD20 = () => {
     rollBreakdown.textContent = `You rolled: ${d20} + ${modifier}`;
 }
 
-rolld4btn.addEventListener("click", rollD4);
+// Event listeners for each die roll //
+
+rolld4btn.addEventListener("click", function() {
+    diceRolls.length = 0;
+    total = 0;
+    for (let i = 0; i < quantity; i++) {
+        let roll = rollD4();
+        diceRolls.push(roll);
+        total += roll;
+    }
+    total = total + modifier;
+    let resultsText = `You Rolled ${quantity} d4 ${modifier}:`;
+    let rollsText = `${diceRolls.join(", ")}`
+    result.textContent = total;
+    rollBreakdown.textContent = resultsText;
+    rolls.textContent = rollsText
+    console.log(diceRolls);
+    console.log(total);
+
+});
+
+
 rolld6btn.addEventListener("click", rollD6);
 rolld8btn.addEventListener("click", rollD8);
 rolld10btn.addEventListener("click", rollD10);
