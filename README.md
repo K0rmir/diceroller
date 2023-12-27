@@ -1,3 +1,4 @@
-# diceroller
-A simple dice roller for games
-Made for fun to practice javascript event listeners
+# Diceroller 
+## A simple dice roller app for tabletop games.
+
+Made for fun to practice JavaScript.
